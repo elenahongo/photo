@@ -19,21 +19,21 @@ class NavBar extends React.Component {
 
 }
   navLinks() { 
-    return Object.keys(this.pages).map(page => {
+    return Object.keys(this.pages).map((page, i) => {
       let pagesValue = this.pages[page];
       var url = window.location; 
       console.log(url.pathname)
       console.log(`/${page}`)
       if(url.pathname=== `/${page}`){
       return (
-        <li className= "nav-item active">
+        <li key={i} className= "nav-item active">
             <a className="nav-link" href={'/' + page}>
               {pagesValue}<span className="sr-only">(current)</span>
             </a>
         </li>
         )} else { 
           return (        
-          <li className="nav-item">
+          <li key={i} className="nav-item">
             <a className="nav-link" href={'/' + page}>
               {pagesValue}
             </a>
@@ -45,9 +45,9 @@ class NavBar extends React.Component {
   }
   render() {
         return (
-          <nav className="navbar navbar-expand-sm navbar-light bg-light">
+          <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
            
-          <a href="./index.html" className="navbar-brand"> <img src={this.logoImage.src} alt={this.logoImage.alt} height="30"/></a>
+          <a href="/index" className="navbar-brand"> <img src={this.logoImage.src} alt={this.logoImage.alt} height="30"/></a>
 
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,3 +65,4 @@ class NavBar extends React.Component {
 };
 
 export default NavBar
+
