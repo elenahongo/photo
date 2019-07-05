@@ -1,28 +1,19 @@
-$(document).ready(() => {
-   
-  
-  $('.login-button').on('click', () => {
-    $('.login-form').show();
-  });
-  
-  $('.menu-button').on('mouseenter', () => {
-    $('.nav-menu').show()
-  })
-  
-  $('.nav-menu').on('mouseleave', () => {
-    $('.nav-menu').hide();
-  })
-  
-  $('#product-photo2').on('keypress', event => {
-    $('.product-photo').addClass('photo-active')
-  }).on('keyup', event => {
-    $('.product-photo').removeClass('photo-active')
-  })
-  
-    
-  $( "#target" ).keydown(function() {
-  alert( "Handler for .keydown() called." );
-});
+/// <reference path="../../../../jquery/typings/globals/jquery/index.d.ts" />
 
-  
-}); 
+$(document).ready(function(){
+  $('#fullpage').fullpage({
+    sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+    scrollingSpeed: (400),
+    autoScrolling: true,
+    scrollHorizontally: true,
+    continuousVertical: true,
+    navigation: true,
+    
+    afterRender: function(){
+      setInterval(function(){
+        $.fn.fullpage.moveSectionDown(); 
+      }, 4000);
+    }
+
+  });
+});
