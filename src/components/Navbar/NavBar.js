@@ -12,12 +12,61 @@ class NavBar extends React.Component {
     contacto: 'Contacto'
   };
 
-  this.logoImage = {
-    src: 'https://s3.amazonaws.com/codecademy-content/courses/learn-bootstrap-components/logo.png',
-    alt: 'Foto Decoracion'
+    this.buttons = {
+      facebook: {
+        src: './logo-facebook.png',
+        alt: 'logo facebook',
+        link: "https://www.facebook.com/ommega.91",
+      },
+        
+      twitter:{
+        src: './logo-twitter.png',
+        alt: 'logo twitter',
+        link: "https://www.facebook.com/elenaaustral",
+      },
+
+      instagram:{
+        src: './logo-instagram.png',
+        alt: 'logo instagram',
+        link: "https://twitter.com/ElenaZilhanij",
+      },
+      
+      store:{
+        src: './cart-white.png',
+        alt: 'logo store',
+        link: "./the-shop/",
+      },
+
+      languague:{
+        src: './bandera-mex.jpg',
+        alt: 'bandera mexico',
+        link: "./es/",
+      },
+    
+    }
+
+    this.logoImage = {
+      src: 'https://s3.amazonaws.com/codecademy-content/courses/learn-bootstrap-components/logo.png',
+      alt: 'Foto Decoracion'
   };
 
 }
+
+  navButtons() { 
+    return Object.keys(this.buttons).map((button, i) => {
+      let buttonsValue = this.buttons[button];
+      console.log(buttonsValue.src)
+       return (  
+          <li key={i+5} className="nav-item">
+            <a className="nav-link" href={buttonsValue.link} target="_blank">
+              <img src={require("" + buttonsValue.src)} alt={buttonsValue.alt}/>
+            </a>
+          </li>
+          )
+        }
+    );
+  };
+
   navLinks() { 
     return Object.keys(this.pages).map((page, i) => {
       let pagesValue = this.pages[page];
@@ -43,23 +92,31 @@ class NavBar extends React.Component {
       
     });
   }
+
   render() {
         return (
           <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
            
-          <a href="/index" className="navbar-brand"> <img src={this.logoImage.src} alt={this.logoImage.alt} height="30"/></a>
+            <a href="/index" className="navbar-brand"> <img src={this.logoImage.src} alt={this.logoImage.alt} height="30"/></a>
 
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav">
-            {this.navLinks()}
-          </ul>
-          </div>
-        </nav>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav">
+                {this.navLinks()}
+                {this.navButtons()}
+              </ul>
+            </div>
+          
+            <div className="bottons-nav">
+
+
+            </div>
+            
+          </nav>
         ); 
     }
 };
