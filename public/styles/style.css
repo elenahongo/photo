@@ -7,28 +7,7 @@
   background-size: cover;
 }
 
+#callbacks-placeholder{
+  position:fixed;top:150px;left:50px;color:black;z-index:999;
+}
 
-
-
-
-#section1 {	
-  background-image: url("../images/istanbul.jpg");
-  }
-  #section3 {	
-    background-image: url("../images/la.jpg");	
-  }	
-  
-  #section4 {	background-image: url("../images/ny.jpg");	
-  }	
-  
-  #section5 {	background-image: url("../images/ny.jpg");	
-  }	
-  
-  #section2 {	background-image: url("../images/la.jpg");	
-  }	
-  
-  #section6 {	background-image: url("../images/istanbul.jpg");	
-  }	
-  
-  #section7 {	background-image: url("../images/istanbul.jpg");	
-  }
