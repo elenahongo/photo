@@ -11,3 +11,5 @@
   position:fixed;top:150px;left:50px;color:black;z-index:999;
 }
 
+.hide {
+  display: none; }
