@@ -8,12 +8,16 @@ $(document).ready(function(){
     scrollHorizontally: true,
     continuousVertical: true,
     navigation: true,
+    resetSliders: true,
     
     afterRender: function(){
       setInterval(function(){
         $.fn.fullpage.moveSectionDown(); 
       }, 4000);
-    }
+    },
 
   });
+
+ 
+
 });
