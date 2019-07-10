@@ -9,9 +9,9 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
     <div>
         <NavBar />
-        
+        <App />
     </div>,
-     document.getElementById('root'));
+        document.getElementById('app'));
     
 
 // If you want your app to work offline and load faster, you can change

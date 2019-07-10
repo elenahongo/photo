@@ -34,7 +34,7 @@ class NavBar extends React.Component {
       store:{
         src: './cart-white.png',
         alt: 'logo store',
-        link: "./the-shop/",
+        link: "./store.html",
       },
 
       languague:{
